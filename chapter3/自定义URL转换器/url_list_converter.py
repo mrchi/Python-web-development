@@ -24,9 +24,11 @@ class ListConverer(BaseConverter):
         self.separator = urllib.parse.unquote(separator)
 
     def to_python(self, value):
+        """将url转换为参数"""
         return value.split(self.separator)
 
     def to_url(self, values):
+        """将参数转换为URL，比如 url_for"""
         return self.separator.join(
             super(ListConverer, self).to_url(value) for value in values
         )
