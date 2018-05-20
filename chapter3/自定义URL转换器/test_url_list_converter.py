@@ -10,10 +10,10 @@ def client():
     client = app.test_client()
     yield client
 
-def test_list1(client):
+def test_list_converter(client):
     rv = client.get("/list1/a+b+c/")
     assert b"Separator: + ['a', 'b', 'c']" == rv.data
 
-def test_list2(client):
+def test_user_defined_list_converter(client):
     rv = client.get("/list2/a|b|c/")
     assert b"Separator: | ['a', 'b', 'c']" == rv.data
