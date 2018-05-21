@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {# This is a comment #}
+    {% block head %}
+    <meta name="description" content="HTML examples">
+    <title>{% block title %}Base{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <p>I'm not here.</p>
+    {% endblock %}
+    {% block footer %}
+    <p>I'm footer.</p>
+    {% endblock %}
+</body>
+</html>
