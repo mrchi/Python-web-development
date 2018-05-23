@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>users</title>
+</head>
+<body>
+{% for index, user in enumerate(users) %}
+<p>{{ index }}<br>{{ user.name|capitalize }}</p>
+{% endfor %}
+<p>current_user:{{ current_user.email }}</p>
+</body>
+</html>
